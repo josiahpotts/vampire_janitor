@@ -208,6 +208,7 @@ func start_level_dialogue(dialogue_set: int):
 		{ 12 :
 			[
 				{"speaker": "Vampire", "text": "Excellent! Another moment and your turn as scullion would become scallion!"},
+				{"speaker": "Vampire", "text": "Prepare yourself, feeble peasant, for now you have become..."}
 			]
 		}
 	]
