@@ -1,5 +1,6 @@
-AnimatedSprite2D
+TextureRect
 CanvasLayer
+AnimatedSprite2D
 Label
 Sprite2D
 Control
@@ -8,7 +9,6 @@ CanvasModulate
 AnimationPlayer
 CollisionShape2D
 CharacterBody2D
-TextureRect
 ColorRect
 Area2D
 StaticBody2D

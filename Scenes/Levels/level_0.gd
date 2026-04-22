@@ -7,6 +7,7 @@ extends Node2D
 @onready var vampire_scene = preload("res://Scenes/Characters/vampire_1.tscn")
 @onready var vampire = vampire_scene.instantiate()
 @onready var tip_arrow = $TipArrow
+@onready var title_screen = $TitleScreen
 
 var dust_spill_instance: Node2D
 var spray_mess_instance: Node2D
@@ -93,8 +94,9 @@ func _process(delta):
 			start_level_dialogue(11)
 			dialogue_counter = 12
 		elif dialogue_counter == 12:
-			start_level_dialogue(12)
+			await start_level_dialogue(12)
 			dialogue_counter = 13
+			title_screen_toggle()
 
 func _on_score_changed(new_score: int) -> void:
 	if new_score == 100:
@@ -225,7 +227,8 @@ func start_level_dialogue(dialogue_set: int):
 	
 	dialogue_box.dialogue_finished.connect(_on_dialogue_finished)
 	
-	return talking
+	#return talking
+	return dialogue_box.dialogue_finished
 
 func _on_dialogue_finished():
 	pass
@@ -266,3 +269,6 @@ func show_dialogue(message: String, message_position):
 
 	bubble.global_position = message_position + Vector2(25, -80)  # Adjust offset above player
 	bubble.show_message(message, message_position, 2.0)
+
+func title_screen_toggle():
+	title_screen.visible = true

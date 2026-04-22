@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://c2w4r655a0nv0"]
+[gd_scene load_steps=41 format=3 uid="uid://c2w4r655a0nv0"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/level_0.gd" id="1_7muv6"]
 [ext_resource type="Texture2D" uid="uid://dmops36q2mnto" path="res://props/lvl_0_bg.png" id="2_wp8es"]
@@ -24,6 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://drda6jxnxnj1h" path="res://animations/tools/Door and anim/F4.png" id="21_mrrin"]
 [ext_resource type="Texture2D" uid="uid://c6h2782ju23hc" path="res://animations/tools/Door and anim/F5.png" id="22_ydssd"]
 [ext_resource type="PackedScene" uid="uid://bc2aa0heym2jm" path="res://Scenes/UI/tip_arrow.tscn" id="24_nit5o"]
+[ext_resource type="Texture2D" uid="uid://dce28va0j0tww" path="res://props/temporary_title_screen.png" id="25_pqsk6"]
 
 [sub_resource type="Curve2D" id="Curve2D_xadxh"]
 _data = {
@@ -513,6 +514,15 @@ offset_left = 1177.0
 offset_top = 439.0
 offset_right = 1177.0
 offset_bottom = 439.0
+
+[node name="TitleScreen" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="TitleScreenImage" type="TextureRect" parent="TitleScreen"]
+offset_right = 1928.0
+offset_bottom = 1083.0
+texture = ExtResource("25_pqsk6")
+expand_mode = 1
 
 [connection signal="timeout" from="Timer3" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="ExitDoor" to="ExitDoor" method="_on_body_entered"]
