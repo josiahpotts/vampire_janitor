@@ -82,6 +82,7 @@ config/icon="res://logo.png"
 [autoload]
 
 GameState="*res://Scripts/game_state.gd"
+SceneChanger="*res://Scenes/UI/scene_changer.tscn"
 
 [display]
 

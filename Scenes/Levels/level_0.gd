@@ -95,8 +95,9 @@ func _process(delta):
 			dialogue_counter = 12
 		elif dialogue_counter == 12:
 			await start_level_dialogue(12)
-			dialogue_counter = 13
-			title_screen_toggle()
+			dialogue_counter = 99
+			#title_screen_toggle()
+			SceneChanger.change_scene("res://Scenes/UI/title_screen.tscn")
 
 func _on_score_changed(new_score: int) -> void:
 	if new_score == 100:
